@@ -7,7 +7,7 @@ def gstreamer_pipeline(
     capture_height=512,
     display_width=512,
     display_height=512,
-    framerate=100,
+    framerate=30,
     flip_method=0,
 ):
     return (
@@ -39,9 +39,9 @@ while True:
     # Convert BGR to HSV
     hsv = cv2.cvtColor(blurred_frame, cv2.COLOR_BGR2HSV)
 
-    colors = {'Red color':(0,0,255), 'Green color':(0,179,0), 'Blue color':(255,0,0)}
-    lower = {'Red color':(166, 84, 141), 'Green color':(65,60,60), 'Blue color':(97, 100, 117)}
-    upper = {'Red color':(186,255,255), 'Green color':(80,255,255), 'Blue color':(111,255,255)}
+    colors = {'Red color':(0,0,255), 'Green color':(0,179,0), 'Blue color':(255,0,0), 'Yellow color':(0,255,255)}
+    lower = {'Red color':(166, 84, 141), 'Green color':(65,60,60), 'Blue color':(97, 100, 117), 'Yellow color':(20,100,100)}
+    upper = {'Red color':(186,255,255), 'Green color':(80,255,255), 'Blue color':(111,255,255), 'Yellow color':(30,255,255)}
     
     for key, value in upper.items():
         kernel = np.ones((7,7),np.uint8)
